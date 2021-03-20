@@ -1,0 +1,117 @@
+.header {
+    height: 400px;
+    background: linear-gradient($veryLightRed, $lightRed);
+
+    > nav {
+        padding: 55px 24px;
+    }
+
+    &__logo {
+        font-family: "Overpass", sans-serif;
+        font-weight: 600;
+        font-size: 35px;
+    }
+
+    &__menu {
+        //mobile menu
+        > span {
+            display: block;
+            width: 33px;
+            height: 3px;
+            background-color: $white;
+
+            &:not(:last-child) {
+                margin-bottom: 6px;
+            }
+        }
+    }
+
+    &__links {
+        position: absolute;
+        margin-left: 250px;
+        font-weight: 600;
+        a {
+            position: relative;
+            color: $grayishBlue;
+            &:not(:last-child) {
+                margin-right: 1.5rem;
+                color: $grayishBlue;
+                position: relative;
+            }
+
+            .arrow-up {
+                border: solid $grayishBlue;
+                border-width: 0 3px 3px 0;
+                display: inline-block;
+                padding: 3px;
+                transform: rotate(-135deg);
+                -webkit-transform: rotate(-135deg);
+                margin-left: 9px;
+                transition: transform 300ms ease-in-out;
+            }
+            &::before {
+                position: absolute;
+                display: block;
+                content: "";
+                height: 2px;
+                background: $grayishBlue;
+                left: 0;
+                right: 0;
+                width: 80%;
+                bottom: -10px;
+                opacity: 0;
+                transition: opacity 300ms ease-in-out;
+            }
+            &:hover {
+                &::before {
+                    opacity: 1;
+                }
+                .arrow-up {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+
+    &__login {
+        font-weight: 600;
+
+        .login {
+            margin-right: 1.5rem;
+            color: $grayishBlue;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                display: block;
+                content: "";
+                height: 2px;
+                background: $grayishBlue;
+                left: 0;
+                right: 0;
+                width: 100%;
+                bottom: -10px;
+                opacity: 0;
+                transition: opacity 300ms ease-in-out;
+            }
+            &:hover {
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .signUp {
+            padding: 0.625rem 1.6rem;
+            border-radius: 50px;
+            cursor: pointer;
+            background-color: rgba($color: $white, $alpha: 1);
+            color: $veryLightRed;
+
+            &:hover {
+                background: rgba($color: $white, $alpha: 0.3);
+                color: $white;
+            }
+        }
+    }
+}
